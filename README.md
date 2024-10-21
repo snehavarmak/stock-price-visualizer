@@ -22,6 +22,7 @@ The following stock symbols are tracked by default:
 - Blackstone (BX)
 
 ---
+![stock_prices_2024-10-21](https://github.com/user-attachments/assets/9acc9c3f-4b16-4941-b73b-d4db0e104ec9)
 
 ## **Prerequisites**
 Ensure you have the following installed:
