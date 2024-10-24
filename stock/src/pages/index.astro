@@ -14,7 +14,7 @@ const stocks = await fetchS3Images();
   </head>
   <body>
     <div class="container">
-      <h1>Latest Stock Price Charts</h1>
+      <h1>Stock Price Charts of US Banks & Hedge Funds</h1>
       <div class="cards">
         {stocks.map(stock => (
           <StockCard stock={stock} />
