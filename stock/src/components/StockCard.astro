@@ -1,0 +1,33 @@
+---
+const { stock } = Astro.props;
+---
+
+<div class="card">
+  <img src={stock.url} alt="Stock Image" />
+  <div class="details">
+    <h2>{stock.key.replace('.png', '')}</h2>
+    <p>Updated on: {new Date(stock.lastModified).toLocaleDateString()}</p>
+  </div>
+</div>
+
+<style>
+  .card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    color: white;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .details {
+    margin-top: 12px;
+  }
+</style>

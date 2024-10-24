@@ -1,0 +1,55 @@
+---
+import { fetchS3Images } from '../utils/fetchS3Images';
+import StockCard from '../components/StockCard.astro';
+
+const stocks = await fetchS3Images();
+---
+
+<html lang="en">
+  <head>
+    <title>Stock Prices</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Latest Stock Price Charts</h1>
+      <div class="cards">
+        {stocks.map(stock => (
+          <StockCard stock={stock} />
+        ))}
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #000000, #1b1b1b);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
